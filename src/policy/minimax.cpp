@@ -4,6 +4,7 @@
 #include "../state/state.hpp"
 #include "./minimax.hpp"
 
+
 Move Minimax::get_move(State *state, int depth){
     Move bestmove;
     int eval;
