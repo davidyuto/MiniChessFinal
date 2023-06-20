@@ -49,8 +49,6 @@ int State::evaluate(){
   }
   return self-oppn;
 }
-
-
 /**
  * @brief return next state after the move
  * 
