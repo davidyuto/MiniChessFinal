@@ -12,17 +12,19 @@ Move Alphabeta::get_move(State* state, int depth) {
         state->get_legal_actions();
     int max = INT_MIN;
     int min = INT_MAX;
+    int alpha=INT_MIN;
+    int beta = INT_MAX;
     int myself=state->player;
     for(auto& move :state->legal_actions){
         if(state->player){
-            int val = minimax(state->next_state(move), depth-1, !state->player,INT_MIN,INT_MAX);
+            int val = minimax(state->next_state(move), depth-1, !state->player,alpha,beta);
             if(val < min){
                 min = val;
                 bestmove = move;
             }
         }
         else{
-            int val = minimax(state->next_state(move), depth-1, !state->player,INT_MIN,INT_MAX);
+            int val = minimax(state->next_state(move), depth-1, !state->player,alpha,beta);
             if(val > max){
                 max = val;
                 bestmove = move;
